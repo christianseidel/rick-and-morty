@@ -1,0 +1,42 @@
+body {
+    background-color: blanchedalmond;
+}
+
+img {
+    border-radius: 100%;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+
+
+    border: 12px solid darkred;
+    width: 300px;
+    border-radius: 8%;
+    background-color: darkseagreen;
+}
+
+.card_text {
+    text-align: center;
+}
+h1, h3 {
+    text-shadow: 2px 2px 2px pink;
+}
+
+h3 {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.h3_last {
+    margin-bottom: 25px;
+}
+
+.card_name {
+    display: flex;
+}
