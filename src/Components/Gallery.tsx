@@ -63,13 +63,12 @@ function Gallery() {
     }
 */
     return (
-        <div className={'Gallery'}>
-            <input data-testid={'search-field'} type={"text"} value={character} placeholder='Morty Smith' onChange={c => setCharacter(c.target.value)}/>
-            <div>{items}</div>
+        <div className={'gallery'}>
+            <input data-testid={'search-field'} type={"text"} value={character} placeholder='search for a character' onChange={c => setCharacter(c.target.value)}/>
+            {items}
             <p>{errorMessage}</p>
 
         </div>
-
 
     )
 }

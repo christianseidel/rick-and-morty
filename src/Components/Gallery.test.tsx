@@ -17,7 +17,7 @@ test ('testing whether http request is handled', async () => {
                             status: 'Alive',
                             image: 'mein bild',
                             origin: {name: 'Earth'},
-                            species: 'outerworld'
+                            species: 'Outer World'
                         },
                         {
                             id: '006',
@@ -25,7 +25,7 @@ test ('testing whether http request is handled', async () => {
                             status: 'auch alive',
                             image: 'ohne bild',
                             origin: {name: 'Earth'},
-                            species: 'outerworld'
+                            species: 'Planet Tenapl'
                         },
                     ]
 
