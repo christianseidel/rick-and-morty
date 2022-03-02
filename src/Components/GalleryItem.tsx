@@ -1,7 +1,9 @@
+import {Link} from "react-router-dom";
 
 interface GalleryItemProps {
 
     name : string;
+    id: number;
     Species : string;
     origin : string;
     img : string;
@@ -18,9 +20,13 @@ function GalleryItem(props : GalleryItemProps) {
                     {props.name} 
                 </h1>
 
-                <p>
+                    <Link to={`${props.id}`}>
+
+                    </Link>
+
+                    <p>
                     <img src={props.img}/>
-                </p>
+                    </p>
 
                 <div className={'card_text'}>
                     <h3 data-testid={"character-species"}>Art: {props.Species} &ndash; Status: {props.status}</h3>

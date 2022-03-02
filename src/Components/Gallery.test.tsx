@@ -1,13 +1,13 @@
 import {render, waitFor, screen, fireEvent} from "@testing-library/react";
-import GalleryItem from "./GalleryItem";
 import Gallery from "./Gallery";
 import galleryItem from "./GalleryItem";
+import {MemoryRouter} from "react-router-dom";
 
 test ('testing whether http request is handled', async () => {
     // given
     jest.spyOn(global, 'fetch').mockImplementation(() => {
         return Promise.resolve({
-            ok: true,
+            status : 200,
             json: () => Promise.resolve(
                 {info:{},
                     results: [
@@ -17,7 +17,7 @@ test ('testing whether http request is handled', async () => {
                             status: 'Alive',
                             image: 'mein bild',
                             origin: {name: 'Earth'},
-                            species: 'outerworld'
+                            species: 'Outer World'
                         },
                         {
                             id: '006',
@@ -25,7 +25,7 @@ test ('testing whether http request is handled', async () => {
                             status: 'auch alive',
                             image: 'ohne bild',
                             origin: {name: 'Earth'},
-                            species: 'outerworld'
+                            species: 'Other World'
                         },
                     ]
 
@@ -33,7 +33,7 @@ test ('testing whether http request is handled', async () => {
             )
         } as Response);
     })
-    render(<Gallery />);
+    render(<Gallery />, {wrapper: MemoryRouter});
 
     await waitFor(() => {
         expect(screen.getAllByTestId('gallery-item').length).toEqual(2)
